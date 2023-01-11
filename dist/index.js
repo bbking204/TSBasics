@@ -1,12 +1,17 @@
 "use strict";
-var _a;
+var _a, _b;
+var inputArray = [];
 (_a = document.getElementById("getNum")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
     var value = document.getElementById("num");
+    inputArray.push(Number(value === null || value === void 0 ? void 0 : value.value));
 });
-function getAverage(_a) {
+(_b = document.getElementById("func")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
+    alert(getAverage(inputArray));
+});
+function getAverage(array) {
     var sum = 0;
-    [].forEach(function average(value) {
-        return sum += value;
+    array.forEach(function average(value) {
+        return sum += Number(value);
     });
     return sum / [].length;
 }

@@ -1,12 +1,18 @@
-document.getElementById("getNum")?.addEventListener("click", ()=>{
-    const value = document.getElementById("num") as HTMLElement;
+let inputArray : number [] = [];
 
+document.getElementById("getNum")?.addEventListener("click", ()=>{
+    const value = document.getElementById("num") as HTMLInputElement;
+    inputArray.push(Number(value?.value));
 })
 
-function getAverage([]) : number{
+document.getElementById("func")?.addEventListener("click", ()=>{
+    alert(getAverage(inputArray));
+})
+
+function getAverage(array : number[]) : number{
     let sum : number = 0;
-    [].forEach(function average(value){
-        return sum+=value;
+    array.forEach(function average(value){
+        return sum+=Number(value);
     });
     return sum/[].length;
 }
