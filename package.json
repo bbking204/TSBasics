@@ -1,0 +1,25 @@
+{
+  "name": "tsbasics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "dist\\Changer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbking204/TSBasics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbking204/TSBasics/issues"
+  },
+  "homepage": "https://github.com/bbking204/TSBasics#readme",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "fs": "^0.0.1-security",
+    "line-reader": "^0.4.0",
+    "typescript": "^4.9.4"
+  }
+}

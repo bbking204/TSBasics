@@ -1,30 +1,23 @@
 "use strict";
-var _a, _b;
-var inputArray = [];
-(_a = document.getElementById("getNum")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
-    var value = document.getElementById("num");
-    inputArray.push(Number(value === null || value === void 0 ? void 0 : value.value));
+let inputArray = [];
+document.getElementById("getNum")?.addEventListener("click", () => {
+    const value = document.getElementById("num");
+    inputArray.push(Number(value?.value));
 });
-(_b = document.getElementById("func")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
+document.getElementById("func")?.addEventListener("click", () => {
     alert(getAverage(inputArray));
 });
-function getAverage(array) {
-    var sum = 0;
-    array.forEach(function average(value) {
-        return sum += Number(value);
+const getAverage = (array) => {
+    const sumWithInitial = array.reduce((accumulator, currentValue) => accumulator + currentValue);
+    return sumWithInitial / array.length;
+};
+const getAmountOfPositive = (array) => {
+    const positives = array.filter((value) => {
+        return value > 0;
     });
-    return sum / [].length;
-}
-function getAmountOfPositive(_a) {
-    var counter = 0;
-    [].forEach(function isPositive(value) {
-        if (value > 0) {
-            counter++;
-        }
-    });
-    return counter;
-}
-function sortList(_a) {
-    var sorted = [].sort();
+    return positives.length;
+};
+const sortList = (array) => {
+    const sorted = array.sort();
     return sorted;
-}
+};

@@ -9,26 +9,22 @@ document.getElementById("func")?.addEventListener("click", ()=>{
     alert(getAverage(inputArray));
 })
 
-function getAverage(array : number[]) : number{
-    let sum : number = 0;
-    array.forEach(function average(value){
-        return sum+=Number(value);
-    });
-    return sum/[].length;
+const getAverage=(array : number[]) : number=>{
+    const sumWithInitial = array.reduce(
+      (accumulator, currentValue) => accumulator + currentValue
+    );
+    return sumWithInitial/array.length;
 }
 
-function getAmountOfPositive([]) : number{
-    let counter : number = 0;
-    [].forEach(function isPositive(value){
-        if(value>0){
-            counter++;
-        }
-    });
-    return counter;
+const getAmountOfPositive=(array : number[]) : number=>{
+    const positives = array.filter((value)=>{
+        return value>0;
+    })
+    return positives.length;
 }
 
-function sortList([]){
-    const sorted = [].sort();
+const sortList=(array : number[])=>{
+    const sorted = array.sort();
     return sorted;
 }
 
